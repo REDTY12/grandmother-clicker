@@ -1,0 +1,74 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ClickerWPF.MainWindow"
+        Title="Form1" Height="500" Width="800"
+        Background="#F5F5F5" ResizeMode="NoResize">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Улучшения" Margin="10,10,5,10" 
+                  FontWeight="Bold" FontSize="14" BorderBrush="#D0D0D0" Background="White">
+            <StackPanel Margin="5">
+                <Button x:Name="button2" Content="Улучшение - 1" 
+                        Height="30" Margin="0,5,0,5" Click="button2_Click"
+                        Background="WhiteSmoke" FontWeight="Normal" FontStyle="Italic">
+                    <Button.Effect>
+                        <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="2" Opacity="0.3"/>
+                    </Button.Effect>
+                </Button>
+                <Button x:Name="button3" Content="Улучшение - 2" 
+                        Height="30" Margin="0,5,0,5" Click="button3_Click"
+                        Visibility="Collapsed" IsEnabled="False"
+                        Background="WhiteSmoke" FontWeight="Normal" FontStyle="Italic"/>
+                <Button x:Name="btnAutoClick" Content="Бабушка (Авто) - 50" 
+                        Height="30" Margin="0,5,0,5" Click="btnAutoClick_Click"
+                        Background="WhiteSmoke" FontWeight="Normal" FontStyle="Italic">
+                    <Button.Effect>
+                        <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="2" Opacity="0.3"/>
+                    </Button.Effect>
+                </Button>
+
+            </StackPanel>
+        </GroupBox>
+        <Grid Grid.Column="1">
+            <TextBlock x:Name="label2" Text="Rebirth: 0" 
+                       HorizontalAlignment="Right" VerticalAlignment="Top"
+                       Margin="0,20,30,0" 
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBlock x:Name="label1" Text="4,00" 
+                       HorizontalAlignment="Center" VerticalAlignment="Top"
+                       Margin="0,80,0,0" 
+                       FontSize="28" FontWeight="Bold" Foreground="#333"
+                       MouseDown="label1_Click"/>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,50,0,0">
+
+                <Button x:Name="button4" Content="Rebirth" 
+                        Width="200" Height="50" Margin="0,0,0,30" 
+                        Background="#6B8E23" Foreground="Black" FontWeight="Bold" FontSize="16"
+                        Click="button4_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="button1" Click="button1_Click"
+                        Width="260" Height="100" BorderThickness="1" BorderBrush="#365E26">
+                    <Button.Background>
+
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF274421" Offset="0"/>
+                            <GradientStop Color="#FF5C854E" Offset="0.8"/>
+                            <GradientStop Color="#FF8CAE80" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
